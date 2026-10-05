@@ -1,7 +1,7 @@
 {
   "aggregate": {
-    "faithfulness": 0.8500,
-    "answer_relevancy": 0.7550,
+    "faithfulness": 0.7,
+    "answer_relevancy": 0.1302,
     "context_precision": 0.9583,
     "context_recall": 0.7833
   },

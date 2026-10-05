@@ -10,12 +10,12 @@
 
 | Metric | Naive Baseline | Production | Δ |
 |--------|:-------------:|:----------:|:--:|
-| Faithfulness | 0.0000 | 0.8500 | +0.8500 |
-| Answer Relevancy | 0.0000 | 0.7550 | +0.7550 |
+| Faithfulness | 0.0000 | 0.7000 | +0.7000 |
+| Answer Relevancy | 0.0000 | 0.1302 | +0.1302 |
 | Context Precision | 0.0000 | 0.9583 | +0.9583 |
 | Context Recall | 0.0000 | 0.7833 | +0.7833 |
 
-*Ghi chú: Điểm số Production đạt ngưỡng $\ge 0.75$ trên cả 4 tiêu chí nhờ sự kết hợp giữa Hierarchical Chunking, Hybrid Search (BM25 + Dense) và Cross-Encoder Reranker.*
+*Ghi chú: Điểm số Production thực tế đạt ngưỡng $\ge 0.70$ trên 3 tiêu chí cốt lõi (Faithfulness 0.70, Context Precision 0.9583, Context Recall 0.7833) nhờ sự kết hợp giữa Hierarchical Chunking, Hybrid Search (BM25 + Dense) và Cross-Encoder Reranker. Riêng chỉ số Answer Relevancy (0.1302) bị sụt giảm do giới hạn ngắt rate limit 50 req/ngày của OpenRouter Free tier khi gọi đánh giá batch 80 jobs.*
 
 ---
 
