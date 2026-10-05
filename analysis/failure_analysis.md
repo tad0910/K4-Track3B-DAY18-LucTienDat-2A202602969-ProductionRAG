@@ -1,6 +1,7 @@
 # Failure Analysis — Lab 18: Production RAG
 
 **Họ và tên học viên:** Lục Tiến Đạt  
+**MSSV:** 2A202602969  
 **Khóa:** K4 - Track 3B  
 
 ---
