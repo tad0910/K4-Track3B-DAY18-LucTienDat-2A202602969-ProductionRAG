@@ -5,8 +5,16 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# --- API Keys ---
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
+# --- API Keys & LLM Provider ---
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "").strip()
+OPENAI_BASE_URL = os.getenv("OPENAI_BASE_URL", "").strip()
+LLM_MODEL = os.getenv("LLM_MODEL", "").strip()
+
+if OPENAI_API_KEY in ("", "sk-...", "your-key-here") or OPENAI_API_KEY.startswith("sk-..."):
+    OPENAI_API_KEY = ""
+
+if not LLM_MODEL:
+    LLM_MODEL = "openai/gpt-4o-mini" if "openrouter" in OPENAI_BASE_URL.lower() else "gpt-4o-mini"
 
 # --- Qdrant ---
 QDRANT_HOST = "localhost"

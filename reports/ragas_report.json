@@ -1,0 +1,111 @@
+{
+  "aggregate": {
+    "faithfulness": 0.8500,
+    "answer_relevancy": 0.7550,
+    "context_precision": 0.9583,
+    "context_recall": 0.7833
+  },
+  "num_questions": 20,
+  "failures": [
+    {
+      "question": "Nhân viên được nghỉ bao nhiêu ngày khi kết hôn?",
+      "answer": "3 ngày làm việc",
+      "ground_truth": "Nhân viên được nghỉ 3 ngày làm việc có lương khi kết hôn, không trừ vào phép năm.",
+      "worst_metric": "faithfulness",
+      "score": 0.0,
+      "avg_score": 0.0,
+      "diagnosis": "LLM hallucinating",
+      "suggested_fix": "Tighten prompt, lower temperature"
+    },
+    {
+      "question": "Bảo hiểm sức khỏe PVI có hạn mức bao nhiêu cho nhân viên?",
+      "answer": "200.000.000 VNĐ/năm",
+      "ground_truth": "Hạn mức bảo hiểm sức khỏe PVI cho nhân viên là 200.000.000 VNĐ/năm, bao gồm nội trú, ngoại trú và nha khoa.",
+      "worst_metric": "faithfulness",
+      "score": 0.0,
+      "avg_score": 0.0,
+      "diagnosis": "LLM hallucinating",
+      "suggested_fix": "Tighten prompt, lower temperature"
+    },
+    {
+      "question": "Nhân viên thử việc có được nghỉ phép năm không?",
+      "answer": "Theo tài liệu thu_viec.md, nhân viên thử việc **KHÔNG được nghỉ phép năm**.",
+      "ground_truth": "KHÔNG. Nhân viên thử việc KHÔNG được nghỉ phép năm. Nếu cần nghỉ, phải xin nghỉ không lương và được trưởng phòng phê duyệt.",
+      "worst_metric": "faithfulness",
+      "score": 0.0,
+      "avg_score": 0.0,
+      "diagnosis": "LLM hallucinating",
+      "suggested_fix": "Tighten prompt, lower temperature"
+    },
+    {
+      "question": "Muốn mua thiết bị trị giá 55 triệu cần ai phê duyệt?",
+      "answer": "Không tìm thấy.",
+      "ground_truth": "Đơn hàng trên 50.000.000 VNĐ cần Tổng Giám đốc (CEO) phê duyệt.",
+      "worst_metric": "faithfulness",
+      "score": 0.0,
+      "avg_score": 0.0,
+      "diagnosis": "LLM hallucinating",
+      "suggested_fix": "Tighten prompt, lower temperature"
+    },
+    {
+      "question": "Nhân viên tạm ứng 15 triệu, sau 20 ngày mới thanh toán. Bị phạt bao nhiêu?",
+      "answer": "Theo nội dung tài liệu: khoản tạm ứng chưa thanh toán sau 15 ngày sẽ bị tính phí **2%/tháng** trên số tiền chưa hoàn thực. Nhân viên nhận 15 triệu VND nhưng thanh toán sau 20 ngày (5 ngày trễ vượt quá kỳ 15 ngày cho phép). Phí phạt tính theo tỷ lệ ngày:  \n2% × (5/30) × 15.000.000 VND = **50.000 VND**.  \nPhí này sẽ được khấu trừ vào lương tháng tiếp theo.",
+      "ground_truth": "Thời hạn thanh toán là 15 ngày. Quá hạn 5 ngày, bị tính phí 2%/tháng trên 15.000.000 VNĐ = 300.000 VNĐ/tháng (tính pro-rata khoảng 50.000 VNĐ cho 5 ngày).",
+      "worst_metric": "faithfulness",
+      "score": 0.0,
+      "avg_score": 0.0,
+      "diagnosis": "LLM hallucinating",
+      "suggested_fix": "Tighten prompt, lower temperature"
+    },
+    {
+      "question": "Lương thử việc của nhân viên Junior mức cao nhất là bao nhiêu?",
+      "answer": "17.000.000 VNĐ (tính là 85% của mức lương Junior cao nhất là 20.000.000 VNĐ/tháng).",
+      "ground_truth": "Junior cao nhất là 20.000.000 VNĐ/tháng. Lương thử việc = 85% x 20.000.000 = 17.000.000 VNĐ/tháng.",
+      "worst_metric": "faithfulness",
+      "score": 0.0,
+      "avg_score": 0.0,
+      "diagnosis": "LLM hallucinating",
+      "suggested_fix": "Tighten prompt, lower temperature"
+    },
+    {
+      "question": "Nhân viên được tài trợ khóa học 25 triệu, nghỉ việc sau 8 tháng hoàn thành khóa học. Phải hoàn trả bao nhiêu?",
+      "answer": "Theo quy định trong tài liệu `hoan_chi_dao_tao.md`: *\"Nhân viên được tài trợ đào tạo phải **cam kết làm việc tại công ty ít nhất 1 năm** sau khi hoàn thành khóa học. Nếu nghỉ việc trước thời hạn cam kết, nhân viên phải hoàn trả **100% chi phí** đào tạo đã được tài trợ.\"*\n\nVì nhân viên nghỉ việc sau 8 tháng (chưa đạt đủ 1 năm cam kết), nên phải hoàn trả toàn bộ chi phí đào tạo đã tài trợ: **25.000.000 VNĐ** (100% số 25 triệu).",
+      "ground_truth": "Nhân viên phải cam kết làm việc ít nhất 1 năm sau khi hoàn thành khóa học. Nghỉ sau 8 tháng là trước hạn cam kết, phải hoàn trả 100% chi phí tức 25.000.000 VNĐ.",
+      "worst_metric": "faithfulness",
+      "score": 0.0,
+      "avg_score": 0.0092,
+      "diagnosis": "LLM hallucinating",
+      "suggested_fix": "Tighten prompt, lower temperature"
+    },
+    {
+      "question": "Mentor và buddy của nhân viên mới có thể là cùng một người không? Quản lý trực tiếp có thể làm mentor không?",
+      "answer": "Trả lời dựa hoàn toàn trên nội dung tài liệu `mentor_buddy.md`:\n\n1. **Mentor và Buddy có thể là cùng một người không?**  \n   Không. Theo quy tắc quan trọng trong tài liệu: *\"Mentor và Buddy phải là **hai người khác nhau** để đảm bảo nhân viên mới có nhiều nguồn hỗ trợ đa dạng.\"*\n\n2. **Quản lý trực tiếp có thể làm Mentor không?**  \n   Không. Tài liệu ghi rõ: *\"Quản lý trực tiếp không được làm Mentor hoặc Buddy\"* và *\"Mentor phải là nhân viên cấp Senior trở lên, khác phòng ban hoặc cùng phòng ban nhưng **không phải quản lý trực tiếp**\".*",
+      "ground_truth": "KHÔNG cho cả hai. Mentor và buddy phải là hai người khác nhau. Quản lý trực tiếp không được làm mentor hoặc buddy.",
+      "worst_metric": "faithfulness",
+      "score": 0.0,
+      "avg_score": 0.0813,
+      "diagnosis": "LLM hallucinating",
+      "suggested_fix": "Tighten prompt, lower temperature"
+    },
+    {
+      "question": "Nếu cần mua một chiếc laptop 30 triệu cho nhân viên mới, ai phê duyệt và cần gì từ phòng CNTT?",
+      "answer": "Không tìm thấy.",
+      "ground_truth": "Laptop 30 triệu nằm trong khoảng 5-50 triệu nên cần Giám đốc phòng ban (Director) phê duyệt. Ngoài ra, mua sắm thiết bị CNTT cần có xác nhận cấu hình kỹ thuật từ phòng CNTT trước khi đề xuất. Cần đính kèm ít nhất 3 báo giá vì trên 10 triệu.",
+      "worst_metric": "faithfulness",
+      "score": 0.0,
+      "avg_score": 0.1032,
+      "diagnosis": "LLM hallucinating",
+      "suggested_fix": "Tighten prompt, lower temperature"
+    },
+    {
+      "question": "Thông tin lương thuộc cấp độ phân loại dữ liệu nào?",
+      "answer": "Theo tài liệu **ky_luong.md**, thông tin lương được định nghĩa là dữ liệu **Bí mật** (và cấm chia sẻ với đồng nghiệp). \n\nTrong tài liệu **phan_loai_du_lieu.md**, bảng phân loại cấp độ chỉ minh họa rõ cấp 1 là **Công khai**, còn các cấp độ khác chưa được liệt kê trong đoạn trích cung cấp. Tuy nhiên, dựa trên ngữ cảnh quy định an ninh thông tin, cấp độ phù hợp cho dữ liệu lương được đánh là **Bí mật**.",
+      "ground_truth": "Theo quy chế chi trả lương, thông tin lương được phân loại là dữ liệu Bí mật, cấm chia sẻ với đồng nghiệp. Theo chính sách phân loại dữ liệu, dữ liệu Bí mật (cấp 3) phải mã hóa khi truyền và hạn chế truy cập theo need-to-know.",
+      "worst_metric": "faithfulness",
+      "score": 0.0,
+      "avg_score": 0.1654,
+      "diagnosis": "LLM hallucinating",
+      "suggested_fix": "Tighten prompt, lower temperature"
+    }
+  ]
+}
